@@ -13,7 +13,9 @@ function showResults(json) {
 function forkRepo() {
   const repo = 'learn-co-curriculum/javascript-fetch-lab'
   //use fetch to fork it!
-  fetch('api.github.com/repos/learn-co-curriculum/javascript-fetch-lab/forks').then(res=>res.json().then(json=>document.getElementById("results").innerHTML=json)
+  fetch('api.github.com/repos/learn-co-curriculum/javascript-fetch-lab/forks',
+{ method: "POST", body: JSON.stringify(postData),
+  headers: { Authorization `token ${token}` } }).then(res=>document.getElementById("results").innerHTML=json)
 }
 
 function getToken() {
